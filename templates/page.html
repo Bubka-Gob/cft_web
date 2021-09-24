@@ -11,5 +11,10 @@
         {{ form.as_p }}
         <button type="submit">Upload</button>
     </form>
+
+    {% if image_object %}
+        <p>{{message}}</p>
+        <img src="{{image_object.image.url}}" style="max-height:400px">
+    {% endif %}
 </body>
 </html>
