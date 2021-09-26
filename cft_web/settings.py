@@ -15,6 +15,31 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'formatter': 'json',
+            'filename': 'log/log.json'
+        }
+    },
+    'formatters': {
+        'json': {
+            '()': 'json_log_formatter.JSONFormatter'
+        }
+    },
+    'loggers': {
+        'pixel_counter': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True
+        }
+    }
+}
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/

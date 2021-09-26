@@ -9,11 +9,13 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Upload</button>
+        <input type="text" name="colour_code">
+        <button type="submit">Загрузить</button>
     </form>
 
     {% if image_object %}
-        <p>{{message}}</p>
+        <p>{{message1}}</p>
+        <p>{{message2}}</p>
         <img src="{{image_object.image.url}}" style="max-height:400px">
     {% endif %}
 </body>
