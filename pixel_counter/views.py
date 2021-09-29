@@ -3,6 +3,7 @@ from .forms import ImageForm
 from PIL import Image
 import logging
 
+
 logger = logging.getLogger(__name__)
 def make_log(message, request_to_log):
     logger.info(message, extra={'method': request_to_log.method, 'ip': request_to_log.META['REMOTE_ADDR']})
